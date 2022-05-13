@@ -5,6 +5,22 @@ const character = newImage('assets/green-character/static.gif')
 let direction = null; //so we can track character with a variable 
 let x = 100;
 let y = 250;
+
+if(direction === 'west') {//defined what "direction" and name of direction would document
+        x = x - 1
+}
+if(direction === 'east') {
+    x = x + 1
+}
+if(direction === 'south') {
+    y = y - 1
+}
+if(direction === 'north') {
+    y = y + 1
+}
+character.style.left = x + 'px'//???
+character.style.bottom = y + 'px'
+
 move(character).to(100, 250)
 
 
