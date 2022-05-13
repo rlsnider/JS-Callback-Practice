@@ -6,7 +6,7 @@ let direction = null; //so we can track character with a variable
 let x = 100;
 let y = 250;
 
-function moveCharacter(){ 
+function moveCharacter(){ //wrap directions in function
     if(direction === 'west') {//defined what "direction" and name of direction would document
         x = x - 1
     }
@@ -19,10 +19,29 @@ function moveCharacter(){
     if(direction === 'north') {
         y = y + 1
     }
-}
+
 character.style.left = x + 'px'//???
 character.style.bottom = y + 'px'
+}
 
+setInterval(moveCharacter, 1)//passes the funtion to setInterval and moves character every 1 millisecond
+document.addEventListener('keydown', function (e){   //change greenie's direction with arrow keys
+
+    if(e.repeat) return;     //Where do "e.repeat, e.key,"come from? Not defined in program
+
+    if(e.key === "ArrowLeft"){
+        direction ='west'
+    }
+    if(e.key === 'ArrowUp'){
+        direction = 'north'
+    }
+    if (e.key === "ArrowRight"){
+        direction = 'east'
+    }
+    if (e.key === 'ArrowDown'){
+        direction = 'south'
+    }
+})
 move(character).to(100, 250)
 
 
