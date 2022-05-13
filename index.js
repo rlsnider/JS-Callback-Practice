@@ -7,7 +7,7 @@ let x = 100;
 let y = 250;
 
 function moveCharacter(){ //wrap directions in function
-    if(direction === 'west') {//defined what "direction" and name of direction would document
+    if(direction === 'west') {    //defined what "direction" and name of direction would document
         x = x - 1
     }
     if(direction === 'east') {
@@ -24,10 +24,10 @@ character.style.left = x + 'px'//???
 character.style.bottom = y + 'px'
 }
 
-setInterval(moveCharacter, 1)//passes the funtion to setInterval and moves character every 1 millisecond
+setInterval(moveCharacter, 1)                  //passes the funtion to setInterval and moves greenie every 1 millisecond
 document.addEventListener('keydown', function (e){   //change greenie's direction with arrow keys
 
-    if(e.repeat) return;     //Where do "e.repeat, e.key,"come from? Not defined in program
+    if(e.repeat) return;                  //Where do "e.repeat, e.key,"come from? Not defined in program
 
     if(e.key === "ArrowLeft"){
         direction ='west'
@@ -42,6 +42,11 @@ document.addEventListener('keydown', function (e){   //change greenie's directio
         direction = 'south'
     }
 })
+
+document.addEventListener('keyup', function (e){    //greenie stops when key is lifted up
+    direction = null
+})
+
 move(character).to(100, 250)
 
 
