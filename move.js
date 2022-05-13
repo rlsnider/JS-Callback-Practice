@@ -6,7 +6,9 @@ function move(element) {
         element.style.bottom = bottom + 'px'
     }
 
-    return {
+    return{
         to: moveToCoordinates
     }
 }
+
+  
