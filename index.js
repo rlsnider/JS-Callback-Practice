@@ -2,6 +2,9 @@ const inventory = newInventory()
 move(inventory).to(0, 0)
 
 const character = newImage('assets/green-character/static.gif')
+let direction = null; //so we can track character with a variable 
+let x = 100;
+let y = 250;
 move(character).to(100, 250)
 
 
