@@ -5,7 +5,7 @@ function move(element) {
         element.style.left = left + 'px'
         element.style.bottom = bottom + 'px'
     }
-    function moveWithArrowKeys(left, bottom, callback){  //define function inside of move and attach it to the object we return
+    function moveWithArrowKeys(left, bottom, handleDirectionChange){  //define function inside of move and attach it to the object we return
             let direction = null;
             let x = left;
             let y = bottom;
@@ -49,13 +49,13 @@ function move(element) {
                 if (e.key === 'ArrowDown'){
                     direction = 'south'
                 }
-                callback(direction)   //callback where we change the direction variable When we add "direction to callback we are putting callback into scope"
-            })
+                handleDirectionChange(direction)   //callback where we change the direction variable When we add "direction to callback we are putting callback into scope"
+            })                          //Getting error message about using "callback" should I name this something else? What is the name of the function here?
             
             document.addEventListener('keyup', function (e){    //greenie stops when key is lifted up
                 direction = null
-                callback(direction)     //callback were we change the direction variable putting callback into scope
-            })
+                handleDirectionChange(direction)     //callback where we change the direction variable putting callback into scope. Getting error messages about using "Callback"
+            })                          //console.log'd direction, and it came back as not defined.
     }
 
     return{
