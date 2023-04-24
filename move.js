@@ -27,7 +27,7 @@ function move(element) {
                     y = y + 1
                 }
             
-            element.style.left = x + 'px'//???
+            element.style.left = x + 'px'
             element.style.bottom = y + 'px'
             }
             
